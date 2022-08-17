@@ -17,7 +17,7 @@ my $repo = q(mavenAndGradle);                                                   
 my $wf   = q(.github/workflows/main.yml);                                       # Work flow on Ubuntu
 
 push my @files, sort                                                            # Files in play
-  grep {m(README\.md|\.pl)}
+  grep {m(README\.md|\.pl|\.java)}
   searchDirectoryTreesForMatchingFiles($home);
 
 for my $s(@files)                                                               # Upload each selected file
