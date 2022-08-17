@@ -36,31 +36,22 @@ jobs:
       run: |
         mvn -B archetype:generate -DgroupId=com.ashley.test  -DartifactId=test -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 
-    - name: MvnCompile
+    - name: Mvn
       run: |
         cd test
-        tree
         mvn compile
-
-    - name: MvnTest
-      run: |
-        cd test
-        tree
         mvn test
 
     - name: GradleInit
       run: |
         cd test
-        tree
         gradle init
 
     - name: Upgrade
       run: |
-        tree
         perl -Ilib upgradeVersion.pl
 
     - name: GradleBuild
       run: |
         cd test
-        tree
         gradle build
