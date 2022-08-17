@@ -23,10 +23,31 @@ jobs:
     - name: Test
       run: |
         sudo apt install maven gradle
+
+    - name: InstallMvn
+      run: |
         mvn -B archetype:generate -DgroupId=com.ashley.test  -DartifactId=test -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+
+    - name: MvnCompile
+      run: |
         mvn compile
+
+    - name: MvnTest
+      run: |
         mvn test
+
+    - name: GradleInit
+      run: |
         gradle init
+
+    - name: Tree
+      run: |
         tree
+
+    - name: Upgrade
+      run: |
         perl upgrade.pl
+
+    - name: GradleBuild
+      run: |
         gradle build
