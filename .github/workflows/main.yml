@@ -79,7 +79,7 @@ jobs:
 
     - name: Create lots of classes for gradle
       run: |
-        perl -Ilib create.pl -- 10
+        perl -Ilib create.pl 10
 
     - name: Gradle on lots of files
       run: |
