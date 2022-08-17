@@ -48,7 +48,7 @@ jobs:
 
     - name: Upgrade
       run: |
-        perl upgrade.pl
+        perl upgradeVersion.pl
 
     - name: GradleBuild
       run: |
