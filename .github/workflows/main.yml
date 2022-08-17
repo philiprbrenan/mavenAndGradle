@@ -40,8 +40,8 @@ jobs:
       run: |
         cd test
         mvn test
-        rm -f ./target/classes/com/ashley/test/App.class
-        rm -f ./build/classes/java/main/com/ashley/test/App.class
+        rm -f ./target/classes/com/ashley/test/App1.class
+        rm -f ./build/classes/java/main/com/ashley/test/App1.class
 
     - name: Maven on one file
       run: |
@@ -61,33 +61,40 @@ jobs:
       run: |
         cd test
         gradle test
+        tree
 
     - name: Create lots of classes for maven
       run: |
         perl -Ilib create.pl 10
+        tree
 
     - name: Maven on lots of files
       run: |
         cd test
         mvn test
+        tree
 
     - name: Maven on one file amongst many
       run: |
         cd test
-        rm src/main/java/com/appaapps/test/App.java
+        rm -f src/main/java/com/appaapps/test/App1.java
         mvn test
+        tree
 
     - name: Create lots of classes for gradle
       run: |
         perl -Ilib create.pl 10
+        tree
 
     - name: Gradle on lots of files
       run: |
         cd test
         gradle test
+        tree
 
     - name: Gradle on file amonsgt many
       run: |
         cd test
-        rm src/main/java/com/appaapps/test/App.java
+        rm -f src/main/java/com/appaapps/test/App1.java
         gradle test
+        tree
