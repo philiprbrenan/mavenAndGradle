@@ -36,6 +36,13 @@ jobs:
       run: |
         mvn -B archetype:generate -DgroupId=com.ashley.test  -DartifactId=test -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 
+    - name: Mvn downloads
+      run: |
+        cd test
+        mvn compile
+        rm -f ./target/classes/com/ashley/test/App.class
+        rm -f ./build/classes/java/main/com/ashley/test/App.class
+
     - name: Mvn
       run: |
         cd test
