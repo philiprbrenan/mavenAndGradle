@@ -10,5 +10,5 @@ use Data::Table::Text qw(:all);
 
 my $f = q(test/build.gradle);                                                   # Input file
 my $s = readFile $f;                                                            # Read input file
-   $s =~ s(1.5) (1.6)gsr;                                                       # Edit file
+   $s =~ s(1.5) (1.6)gs;                                                        # Edit file
 owf $f, $s;                                                                     # Rewrite output file
