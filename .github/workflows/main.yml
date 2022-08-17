@@ -32,11 +32,11 @@ jobs:
       run: |
         sudo apt install maven gradle
 
-    - name: InstallMvn
+    - name: Install Mvn
       run: |
         mvn -B archetype:generate -DgroupId=com.ashley.test  -DartifactId=test -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 
-    - name: Mvn downloads
+    - name: Mvn downloads so we do not time network activity
       run: |
         cd test
         mvn compile
@@ -49,7 +49,7 @@ jobs:
         mvn compile
         mvn test
 
-    - name: GradleInit
+    - name: Gradle Init
       run: |
         cd test
         gradle init
@@ -58,7 +58,7 @@ jobs:
       run: |
         perl -Ilib upgradeVersion.pl
 
-    - name: GradleBuild
+    - name: Gradle Build
       run: |
         cd test
         gradle build
