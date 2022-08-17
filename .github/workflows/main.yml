@@ -48,8 +48,6 @@ jobs:
 
     - name: Upgrade
       run: |
-        cd test
-        tree
         perl upgrade.pl
 
     - name: GradleBuild
