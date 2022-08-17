@@ -52,7 +52,7 @@ jobs:
 
     - name: Upgrade
       run: |
-        perl upgradeVersion.pl
+        perl -Ilib upgradeVersion.pl
 
     - name: GradleBuild
       run: |
