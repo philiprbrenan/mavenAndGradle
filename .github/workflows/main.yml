@@ -20,6 +20,10 @@ jobs:
         unzip DataTableText
         cp -R DataTableText-main/* .
 
+    - name: Install Data::Dump
+      run: |
+        sudo cpan install -T Data::Dump
+
     - name: Tree
       run: |
         tree
