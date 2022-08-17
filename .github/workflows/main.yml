@@ -64,7 +64,7 @@ jobs:
 
     - name: Create lots of classes for maven
       run: |
-        perl -Ilib create.pl -- 1000
+        perl -Ilib create.pl 10
 
     - name: Maven on lots of files
       run: |
@@ -79,7 +79,7 @@ jobs:
 
     - name: Create lots of classes for gradle
       run: |
-        perl -Ilib create.pl -- 1000
+        perl -Ilib create.pl -- 10
 
     - name: Gradle on lots of files
       run: |
