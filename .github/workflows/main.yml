@@ -1,0 +1,32 @@
+# Test NasmX86
+
+name: Test
+
+on:
+  push
+
+jobs:
+  test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'main'
+
+    - name: Download other repos
+      run: |
+        curl -sL https://github.com/philiprbrenan/DataTableText/archive/refs/heads/main.zip > DataTableText.zip
+        unzip DataTableText
+        cp -R DataTableText-main/* .
+
+    - name: Test
+      run: |
+        sudo apt install maven gradle
+        mvn -B archetype:generate -DgroupId=com.ashley.test  -DartifactId=test -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+        mvn compile
+        mvn test
+        gradle init
+        tree
+        perl upgrade.pl
+        gradle build
