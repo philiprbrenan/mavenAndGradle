@@ -30,29 +30,30 @@ jobs:
 
     - name: MvnCompile
       run: |
+        cd test
         tree
         mvn compile
 
     - name: MvnTest
       run: |
+        cd test
         tree
         mvn test
 
     - name: GradleInit
       run: |
+        cd test
         tree
         gradle init
 
-    - name: Tree
-      run: |
-        tree
-
     - name: Upgrade
       run: |
+        cd test
         tree
         perl upgrade.pl
 
     - name: GradleBuild
       run: |
+        cd test
         tree
         gradle build
