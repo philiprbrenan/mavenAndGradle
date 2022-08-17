@@ -20,6 +20,10 @@ jobs:
         unzip DataTableText
         cp -R DataTableText-main/* .
 
+    - name: Tree
+      run: |
+        tree
+
     - name: Test
       run: |
         sudo apt install maven gradle
